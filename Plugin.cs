@@ -15,7 +15,7 @@ public class Plugin : BaseUnityPlugin
             // since if this instance is still alive when the next one starts loading, shit breaks
             Application.quitting += () =>
             {
-                // idk why but env variables are passed, and doorstop sets and init variable for whatever reason
+                // idk why but env variables are passed, and doorstop sets some init variable for whatever reason
                 // so i reset it since if you dont doorstop just skips loading bepinex :P
                 Environment.SetEnvironmentVariable("DOORSTOP_INITIALIZED", null);
                 Application.OpenURL(Paths.ExecutablePath);
